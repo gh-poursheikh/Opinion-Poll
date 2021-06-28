@@ -3,13 +3,24 @@ package com.example.opinionpoll.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 public class Person implements Parcelable {
+    @SerializedName("person_id")
     private int personId;
+
+    @SerializedName("person_type")
     private String personType;
+
     private String username;
     private String password;
+
+    @SerializedName("first_name")
     private String firstName;
+
+    @SerializedName("last_name")
     private String lastName;
+
     private int voted;
 
     public Person() {
