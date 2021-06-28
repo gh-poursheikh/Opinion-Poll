@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.opinionpoll">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="false"
@@ -14,6 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpinionPoll"
         tools:replace="android:allowBackup">
+        <activity android:name=".NormalUserActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
