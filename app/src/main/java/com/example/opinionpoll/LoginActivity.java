@@ -1,5 +1,6 @@
 package com.example.opinionpoll;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -59,7 +60,18 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     Person person = response.body();
                     if (person.getPersonType().equalsIgnoreCase("Normal")) {
-                        Toast.makeText(LoginActivity.this, "Normal User!", Toast.LENGTH_SHORT).show();
+                        if (person.getVoted() == 0) {
+                            Intent intent = new Intent(getBaseContext(), NormalUserActivity.class);
+                            intent.putExtra("EXTRA_SESSION_ID", person);
+                            startActivity(intent);
+                            finish(); // When the users hit the back reportButton, they will not be able to return
+                            // to the current activity because it has been killed off the Back Stack.)
+                        } else {
+                            usernameEditText.setText("");
+                            passwordEditText.setText("");
+                            usernameEditText.requestFocus();
+                            Toast.makeText(LoginActivity.this, "Sorry! You have already voted!", Toast.LENGTH_SHORT).show();
+                        }
                     } else {
                         Toast.makeText(LoginActivity.this, "System User!", Toast.LENGTH_SHORT).show();
                     }
