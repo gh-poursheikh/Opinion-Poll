@@ -3,4 +3,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
+    <string name="welcome_normal_user">Welcome to Opinion Poll</string>
+    <string name="submit">Submit</string>
 </resources>
