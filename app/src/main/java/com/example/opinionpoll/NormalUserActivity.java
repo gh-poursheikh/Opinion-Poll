@@ -54,7 +54,7 @@ public class NormalUserActivity extends AppCompatActivity {
         Button submitButton = findViewById(R.id.submitButton);
         getExtras();
         welcomeUserTextView = findViewById(R.id.welcomeUserTextView);
-        welcomeUserTextView.setText(String.format("Dear %1$s %2$s!\nWelcome to Opinion Poll application!\nPlease give each item from 1 to 5 stars.", firstName, lastName));
+        welcomeUserTextView.setText(String.format(getString(R.string.welcome_normal_user), firstName, lastName));
 
         buildRecyclerView();
         pullProducts(0);
@@ -75,7 +75,7 @@ public class NormalUserActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<ArrayList<Product>> call, Response<ArrayList<Product>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(NormalUserActivity.this, "Network Error Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(NormalUserActivity.this, getString(R.string.network_error_code) + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
                 try {
@@ -107,7 +107,7 @@ public class NormalUserActivity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Map<String, String>> call, Response<Map<String, String>> response) {
                 if (!response.isSuccessful()) {
-                    Toast.makeText(NormalUserActivity.this, "Network Error Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(NormalUserActivity.this, getString(R.string.network_error_code) + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
                 try {
@@ -131,13 +131,13 @@ public class NormalUserActivity extends AppCompatActivity {
 
     private boolean ratingsValid() {
         if (ratingList.size() < productList.size()) {
-            Toast.makeText(this, "Please rate all items!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, getString(R.string.please_rate_all_items), Toast.LENGTH_SHORT).show();
             return false;
         }
 
         for(Rating item : ratingList) {
             if (item.getRatingNumber() == DEFAULT_RATING_NUMBER) {
-                Toast.makeText(this, "Please give each item from 1 to 5 stars.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, getString(R.string.please_give_each_item_stars), Toast.LENGTH_LONG).show();
                 return false;
             }
         }
@@ -188,19 +188,19 @@ public class NormalUserActivity extends AppCompatActivity {
         String message = null;
         switch (status) {
             case SUCCESS:
-                title = "Congratulations!";
-                message = "Your feedback was saved successfully. Thanks for your participation and sincerity.";
+                title = getString(R.string.congrats);
+                message = getString(R.string.feedback_was_saved);
                 break;
             case FAILURE:
-                title = "Sorry!";
-                message = "Something went wrong during insertion operation. We apologize for any inconvenience caused.\nPlease contact your system administrator.";
+                title = getString(R.string.sorry);
+                message = getString(R.string.something_went_wrong);
                 break;
         }
         AlertDialog alertDialog = new AlertDialog.Builder(this).create();
         alertDialog.setCancelable(false);
         alertDialog.setTitle(title);
         alertDialog.setMessage(message);
-        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, "Quit", new DialogInterface.OnClickListener() {
+        alertDialog.setButton(AlertDialog.BUTTON_NEUTRAL, getString(R.string.quit), new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 finish();
                 System.exit(0);

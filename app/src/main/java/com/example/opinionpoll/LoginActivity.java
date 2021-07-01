@@ -54,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onResponse(Call<Person> call, Response<Person> response) {
                 if (!response.isSuccessful()) {
                     Log.d(TAG, "onResponse: response.code(): " + response.code());
-                    Toast.makeText(LoginActivity.this, "Network Error Code: " + response.code(), Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.network_error_code) + response.code(), Toast.LENGTH_LONG).show();
                     return;
                 }
                 try {
@@ -70,7 +70,7 @@ public class LoginActivity extends AppCompatActivity {
                             usernameEditText.setText("");
                             passwordEditText.setText("");
                             usernameEditText.requestFocus();
-                            Toast.makeText(LoginActivity.this, "Sorry! You have already voted!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, getString(R.string.sorry_you_have_already_voted), Toast.LENGTH_SHORT).show();
                         }
                     } else {
                         Toast.makeText(LoginActivity.this, "System User!", Toast.LENGTH_SHORT).show();
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
                     usernameEditText.setText("");
                     passwordEditText.setText("");
                     usernameEditText.requestFocus();
-                    Toast.makeText(LoginActivity.this, "Sorry, no records were found.", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, getString(R.string.sorry_record_not_found), Toast.LENGTH_SHORT).show();
                 }
             }
 

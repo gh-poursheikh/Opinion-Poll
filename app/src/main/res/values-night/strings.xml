@@ -3,6 +3,16 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="welcome_normal_user">Welcome to Opinion Poll</string>
     <string name="submit">Submit</string>
+    <string name="welcome_normal_user">Dear %1$s %2$s!\nWelcome to Opinion Poll application!\nPlease give each item from 1 to 5 stars.</string>
+    <string name="sorry_you_have_already_voted">Sorry! You have already voted!</string>
+    <string name="sorry_record_not_found">Sorry, no records were found.</string>
+    <string name="network_error_code">"Network Error Code: "</string>
+    <string name="please_rate_all_items">Please rate all items!</string>
+    <string name="please_give_each_item_stars">Please give each item from 1 to 5 stars.</string>
+    <string name="congrats">Congratulations!</string>
+    <string name="feedback_was_saved">Your feedback was saved successfully. Thanks for your participation and sincerity.</string>
+    <string name="sorry">Sorry!</string>
+    <string name="something_went_wrong">Something went wrong during insertion operation. We apologize for any inconvenience caused.\nPlease contact your system administrator.</string>
+    <string name="quit">Quit</string>
 </resources>
