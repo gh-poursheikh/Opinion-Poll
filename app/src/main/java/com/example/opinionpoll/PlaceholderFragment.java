@@ -1,4 +1,4 @@
-package com.example.opinionpoll.ui.main;
+package com.example.opinionpoll;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,8 +12,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.opinionpoll.R;
 import com.example.opinionpoll.databinding.FragmentSystemUserBinding;
+import com.example.opinionpoll.utils.PageViewModel;
 
 /**
  * A placeholder fragment containing a simple view.

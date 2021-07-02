@@ -1,4 +1,4 @@
-package com.example.opinionpoll.ui.main;
+package com.example.opinionpoll.utils;
 
 import android.content.Context;
 
@@ -9,18 +9,19 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
 import com.example.opinionpoll.R;
+import com.example.opinionpoll.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
  * one of the sections/tabs/pages.
  */
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
     private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
     private final Context mContext;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public ViewPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         mContext = context;
     }

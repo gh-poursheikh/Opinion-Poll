@@ -1,4 +1,4 @@
-package com.example.opinionpoll.ui.main;
+package com.example.opinionpoll.utils;
 
 import androidx.arch.core.util.Function;
 import androidx.lifecycle.LiveData;
