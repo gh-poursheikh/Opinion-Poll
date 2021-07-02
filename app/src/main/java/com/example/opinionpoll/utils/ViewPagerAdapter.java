@@ -8,8 +8,10 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
+import com.example.opinionpoll.BarChartFragment;
+import com.example.opinionpoll.HBarChartFragment;
+import com.example.opinionpoll.PieChartFragment;
 import com.example.opinionpoll.R;
-import com.example.opinionpoll.PlaceholderFragment;
 
 /**
  * A [FragmentPagerAdapter] that returns a fragment corresponding to
@@ -29,8 +31,17 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        // Return a chart-plotting fragments depending on the tab position.
+        switch (position) {
+            case 0:
+                return BarChartFragment.newInstance();
+            case 1:
+                return PieChartFragment.newInstance();
+            case 2:
+                return HBarChartFragment.newInstance();
+            default:
+                return null;
+        }
     }
 
     @Nullable
