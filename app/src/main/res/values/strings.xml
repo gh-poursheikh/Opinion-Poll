@@ -15,4 +15,7 @@
     <string name="sorry">Sorry!</string>
     <string name="something_went_wrong">Something went wrong during insertion operation. We apologize for any inconvenience caused.\nPlease contact your system administrator.</string>
     <string name="quit">Quit</string>
+    <string name="title_activity_system_user">SystemUserActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>

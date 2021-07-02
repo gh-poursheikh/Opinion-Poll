@@ -14,7 +14,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OpinionPoll"
         tools:replace="android:allowBackup">
-        <activity android:name=".NormalUserActivity"/>
+        <activity
+            android:name=".SystemUserActivity"
+            android:label="@string/title_activity_system_user"
+            android:theme="@style/Theme.OpinionPoll.NoActionBar"></activity>
+        <activity android:name=".NormalUserActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
