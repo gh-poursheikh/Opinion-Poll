@@ -73,7 +73,11 @@ public class LoginActivity extends AppCompatActivity {
                             Toast.makeText(LoginActivity.this, getString(R.string.sorry_you_have_already_voted), Toast.LENGTH_SHORT).show();
                         }
                     } else {
-                        Toast.makeText(LoginActivity.this, "System User!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(getBaseContext(), SystemUserActivity.class);
+                        intent.putExtra("EXTRA_SESSION_ID", person);
+                        startActivity(intent);
+                        finish(); // When the users hit the back reportButton, they will not be able to return
+                        // to the current activity because it has been killed off the Back Stack.)
                     }
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -88,7 +92,6 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onFailure(Call<Person> call, Throwable t) {
                 Log.d(TAG, "onFailure: " + t.getMessage());
-                Toast.makeText(LoginActivity.this, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
