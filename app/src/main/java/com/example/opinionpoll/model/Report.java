@@ -1,8 +1,11 @@
 package com.example.opinionpoll.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import com.google.gson.annotations.SerializedName;
 
-public class Report {
+public class Report implements Parcelable {
     @SerializedName("product_name")
     public String productName;
 
@@ -32,4 +35,37 @@ public class Report {
     public void setProductAverage(double productAverage) {
         this.productAverage = productAverage;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(this.productName);
+        dest.writeDouble(this.productAverage);
+    }
+
+    public void readFromParcel(Parcel source) {
+        this.productName = source.readString();
+        this.productAverage = source.readDouble();
+    }
+
+    protected Report(Parcel in) {
+        this.productName = in.readString();
+        this.productAverage = in.readDouble();
+    }
+
+    public static final Parcelable.Creator<Report> CREATOR = new Parcelable.Creator<Report>() {
+        @Override
+        public Report createFromParcel(Parcel source) {
+            return new Report(source);
+        }
+
+        @Override
+        public Report[] newArray(int size) {
+            return new Report[size];
+        }
+    };
 }
