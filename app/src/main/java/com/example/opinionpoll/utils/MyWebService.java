@@ -2,6 +2,7 @@ package com.example.opinionpoll.utils;
 
 import com.example.opinionpoll.model.Person;
 import com.example.opinionpoll.model.Product;
+import com.example.opinionpoll.model.Report;
 
 import java.util.ArrayList;
 import java.util.Map;
@@ -12,6 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface MyWebService {
@@ -21,6 +23,7 @@ public interface MyWebService {
     String LOGIN_FEED = "opinion_poll/login.php";
     String PRODUCT_FEED = "opinion_poll/get_product_list.php";
     String RATING_FEED = "opinion_poll/set_rating.php";
+    String REPORT_FEED = "opinion_poll/get_report.php";
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
@@ -39,4 +42,6 @@ public interface MyWebService {
     @POST(RATING_FEED)
     Call<Map<String, String>> setRating(@FieldMap Map<String, String> params);
 
+    @GET(REPORT_FEED)
+    Call<ArrayList<Report>> getReport();
 }
