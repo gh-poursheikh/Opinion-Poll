@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.opinionpoll.databinding.FragmentPieChartBinding;
 import com.example.opinionpoll.model.Report;
+import com.example.opinionpoll.utils.MyMarkerView;
 import com.example.opinionpoll.utils.MyWebService;
 import com.example.opinionpoll.utils.PageViewModel;
 import com.github.mikephil.charting.charts.PieChart;
@@ -69,6 +70,9 @@ public class PieChartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_pie_chart, container, false);
         pieChart = view.findViewById(R.id.pie_chart);
         refreshChart = view.findViewById(R.id.refresh_button_pie);
+        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+        mv.setChartView(pieChart);
+        pieChart.setMarker(mv);
 
         refreshChart.setOnClickListener(new View.OnClickListener() {
             @Override

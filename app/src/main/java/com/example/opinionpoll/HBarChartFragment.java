@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.opinionpoll.databinding.FragmentHBarChartBinding;
 import com.example.opinionpoll.model.Report;
+import com.example.opinionpoll.utils.MyMarkerView;
 import com.example.opinionpoll.utils.MyWebService;
 import com.example.opinionpoll.utils.PageViewModel;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
@@ -73,6 +74,9 @@ public class HBarChartFragment extends Fragment {
 
         hBarChart = view.findViewById(R.id.h_bar_chart);
         refreshChart = view.findViewById(R.id.refresh_button_h_bar);
+        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+        mv.setChartView(hBarChart);
+        hBarChart.setMarker(mv);
 
         refreshChart.setOnClickListener(new View.OnClickListener() {
             @Override

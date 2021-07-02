@@ -14,6 +14,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.opinionpoll.databinding.FragmentBarChartBinding;
 import com.example.opinionpoll.model.Report;
+import com.example.opinionpoll.utils.MyMarkerView;
 import com.example.opinionpoll.utils.MyWebService;
 import com.example.opinionpoll.utils.PageViewModel;
 import com.github.mikephil.charting.charts.BarChart;
@@ -72,6 +73,9 @@ public class BarChartFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_bar_chart, container, false);
         barChart = view.findViewById(R.id.bar_chart);
         refreshChart = view.findViewById(R.id.refresh_button_bar);
+        MyMarkerView mv = new MyMarkerView(getContext(), R.layout.custom_marker_view);
+        mv.setChartView(barChart);
+        barChart.setMarker(mv);
 
         refreshChart.setOnClickListener(new View.OnClickListener() {
             @Override
