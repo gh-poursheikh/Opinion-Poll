@@ -24,6 +24,7 @@ public interface MyWebService {
     String PRODUCT_FEED = "opinion_poll/get_product_list.php";
     String RATING_FEED = "opinion_poll/set_rating.php";
     String REPORT_FEED = "opinion_poll/get_report.php";
+    String DOWNLOAD_FEED = "opinion_poll/download_spreadsheet.php";
 
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl(BASE_URL)
