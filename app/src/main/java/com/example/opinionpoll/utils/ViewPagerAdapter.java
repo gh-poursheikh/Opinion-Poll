@@ -18,7 +18,7 @@ import com.example.opinionpoll.PlaceholderFragment;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @StringRes
-    private static final int[] TAB_TITLES = new int[]{R.string.tab_text_1, R.string.tab_text_2};
+    private static final int[] TAB_TITLES = new int[]{R.string.bar_chart, R.string.pie_chart, R.string.h_bar_chart};
     private final Context mContext;
 
     public ViewPagerAdapter(Context context, FragmentManager fm) {
@@ -41,7 +41,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public int getCount() {
-        // Show 2 total pages.
-        return 2;
+        // Show 3 total pages.
+        return 3;
     }
 }

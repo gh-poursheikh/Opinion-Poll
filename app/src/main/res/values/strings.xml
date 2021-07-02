@@ -16,6 +16,7 @@
     <string name="something_went_wrong">Something went wrong during insertion operation. We apologize for any inconvenience caused.\nPlease contact your system administrator.</string>
     <string name="quit">Quit</string>
     <string name="title_activity_system_user">SystemUserActivity</string>
-    <string name="tab_text_1">Tab 1</string>
-    <string name="tab_text_2">Tab 2</string>
+    <string name="bar_chart">Bar Chart</string>
+    <string name="pie_chart">Pie Chart</string>
+    <string name="h_bar_chart">Horizontal Bar Chart</string>
 </resources>
