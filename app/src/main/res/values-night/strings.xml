@@ -15,4 +15,5 @@
     <string name="sorry">Sorry!</string>
     <string name="something_went_wrong">Something went wrong during insertion operation. We apologize for any inconvenience caused.\nPlease contact your system administrator.</string>
     <string name="quit">Quit</string>
+    <string name="refresh">Refresh</string>
 </resources>
