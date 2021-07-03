@@ -4,6 +4,8 @@
     package="com.example.opinionpoll">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
 
     <application
         android:allowBackup="false"
@@ -17,7 +19,7 @@
         <activity
             android:name=".SystemUserActivity"
             android:label="@string/title_activity_system_user"
-            android:theme="@style/Theme.OpinionPoll.NoActionBar"></activity>
+            android:theme="@style/Theme.OpinionPoll.NoActionBar"/>
         <activity android:name=".NormalUserActivity" />
         <activity android:name=".LoginActivity">
             <intent-filter>
