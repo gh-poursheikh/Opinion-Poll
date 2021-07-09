@@ -1,5 +1,6 @@
 package com.example.opinionpoll.utils;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -56,6 +57,7 @@ public class RecyclerViewItemAdapter extends RecyclerView.Adapter<RecyclerViewIt
         return itemViewHolder;
     }
 
+    @SuppressLint("ResourceType")
     @Override
     public void onBindViewHolder(@NonNull ItemViewHolder holder, int position) {
 
@@ -70,7 +72,11 @@ public class RecyclerViewItemAdapter extends RecyclerView.Adapter<RecyclerViewIt
         holder.itemRating.setRating(currentRatingItem.getRatingNumber());
 
         String imageFeed = currentProductItem.getProductImagePath();
-        Picasso.get().load(MyWebService.BASE_URL + imageFeed).resize(80, 80).into(holder.itemImage);
+        Picasso.get().load(MyWebService.BASE_URL + imageFeed)
+                .resize(80, 80)
+                .placeholder(R.drawable.loading_animation)
+                .error(R.drawable.ic_error)
+                .into(holder.itemImage);
 
         holder.itemRating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
