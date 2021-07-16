@@ -45,7 +45,7 @@ TODOs
 Project is: _in progress_
 
 ## Inspiration
-SVG icons downloaded from [FlatIcon](https://www.flaticon.com)
+SVG icons downloaded from [FlatIcon](https://www.flaticon.com).
 
 ## Contact
-Created by Ghassem Poursheikh - feel free to [contact me](https://www.linkedin.com/in/ghassem-poursheikh/)
+Created by Ghassem Poursheikh - feel free to [contact me](https://www.linkedin.com/in/ghassem-poursheikh/)!
