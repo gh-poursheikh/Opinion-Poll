@@ -111,7 +111,7 @@ public class NormalUserActivity extends AppCompatActivity {
                     return;
                 }
                 try {
-                    if (response.body().get("success").equalsIgnoreCase("Insertion and Update successful.")) {
+                    if (response.body().get("result").equalsIgnoreCase("success")) {
                         openDialog(Status.SUCCESS);
                     } else {
                         openDialog(Status.FAILURE);
