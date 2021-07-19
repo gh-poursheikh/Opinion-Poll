@@ -48,4 +48,4 @@ Project is: _in progress_
 SVG icons downloaded from [FlatIcon](https://www.flaticon.com).
 
 ## Contact
-Created by Ghassem Poursheikh - feel free to [contact me](https://www.linkedin.com/in/ghassem-poursheikh/)!
+Created by [Ghassem Poursheikh](https://www.linkedin.com/in/ghassem-poursheikh/) - feel free to contact me!
