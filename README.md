@@ -12,7 +12,7 @@
 * [Contact](#contact)
 
 ## General info
-An application that gets the end user opinions processed by a remote server API and displays them in statistical charts and downloads the final report in the form of a spreadsheet file to the potential administrator(s).
+An application that shows a list of products to the end user, asks the user to rate product items, gets the end user ratings processed by [Opinion Poll [Server]](https://github.com/gh-poursheikh/opinion-poll-server.git), displays those processed ratings in statistical charts and downloads the final report in the form of a spreadsheet file to be used by potential administrator(s).
 
 ## Screencasts
 ![normal-uer](https://user-images.githubusercontent.com/83492666/125852084-090ecf0c-63e3-4a43-adb8-17f74d8bdc89.gif)
